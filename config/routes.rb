@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'stocks/index'
+  get '/stocks', to: 'stocks#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
-  
+
 end
