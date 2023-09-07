@@ -26,7 +26,7 @@ module Stockup
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins 'https://rmkaelbr.github.io/StockUp-React', 'https://rmkaelbr.github.io', 'http://localhost:3002' # React app origin.
-        resource '*', headers: :any, methods: [:get, :options]
+        resource '*', headers: :any, methods: [:get, :post, :delete, :options]
       end
     end
   end
