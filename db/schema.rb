@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_09_050119) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_11_075854) do
   create_table "stocks", force: :cascade do |t|
     t.string "symbol"
     t.string "name"
@@ -23,8 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_09_050119) do
     t.string "username", null: false
     t.string "email", null: false
     t.string "password_digest"
-    t.boolean "admin"
-    t.boolean "status"
+    t.boolean "admin", default: false
+    t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
