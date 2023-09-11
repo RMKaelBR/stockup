@@ -1,6 +1,4 @@
 class StocksController < ApplicationController
-  # before_action :require_user_login!
-  # before_action :authenticate_user!
   before_action :require_login
   
   def index

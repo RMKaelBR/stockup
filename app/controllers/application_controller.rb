@@ -4,10 +4,9 @@ class ApplicationController < ActionController::API
   private
 
   def require_login
-    puts "This is required."
     token = request.headers['Authorization']&.split(' ')&.last
-    puts "Token received: #{token}"
-    puts "JWT_SECRET_KEY = #{JWT_SECRET_KEY}"
+    # puts "Token received: #{token}"
+    # puts "JWT_SECRET_KEY = #{JWT_SECRET_KEY}"
     begin
       decoded_token = JWT.decode(token, JWT_SECRET_KEY, true, algorithm: 'HS256')
       user_id = decoded_token[0]['sub']
