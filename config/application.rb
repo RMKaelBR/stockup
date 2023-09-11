@@ -10,6 +10,7 @@ module Stockup
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.jwt_secret_key = ENV['JWT_SECRET_KEY']
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -25,7 +26,7 @@ module Stockup
     config.api_only = true
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'https://rmkaelbr.github.io/StockUp-React', 'https://rmkaelbr.github.io', 'http://localhost:3002' # React app origin.
+        origins 'http://localhost:3002', 'https://rmkaelbr.github.io/StockUp-React', 'https://rmkaelbr.github.io'  # React app origin.
         resource '*', headers: :any, methods: [:get, :post, :delete, :options]
       end
     end

@@ -1,4 +1,8 @@
 class StocksController < ApplicationController
+  # before_action :require_user_login!
+  # before_action :authenticate_user!
+  before_action :require_login
+  
   def index
     @stocks = fetch_stocks_data_from_api
     render json: @stocks
